@@ -45,8 +45,19 @@ const Cards = ({ results, search }) => {
       );
     });
   } else {
-    if (search === "") display = "Loading";
-    else display = "No characters Found";
+    if (search === "") {
+      display = (
+        <div className="pt-2 mx-auto text-xl font-bold text-center text-gray-900 col-span-full ">
+          Loading Characters...
+        </div>
+      );
+    } else {
+      display = (
+        <div className="pt-2 mx-auto text-xl font-bold text-center text-gray-900 col-span-full ">
+          No character found !!!
+        </div>
+      );
+    }
   }
 
   return <>{display}</>;
