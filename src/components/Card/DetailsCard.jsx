@@ -30,7 +30,7 @@ const DetailsCard = ({ characterData }) => {
         }
       })()}
 
-      <div className="text-sm text-center content">
+      <div className="text-sm font-semibold text-center content">
         <div className="">
           <span className="font-semibold">Gender: </span>
           {gender}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const Cards = ({ results }) => {
+const Cards = ({ results, search }) => {
   let display;
 
   if (results) {
@@ -10,30 +10,30 @@ const Cards = ({ results }) => {
         <Link
           to={`${id}`}
           key={id}
-          className="p-4 bg-blue-50 flex mx-auto my-2 rounded border-2 shadow hover:shadow-md hover:shadow-blue-500"
+          className="flex p-4 mx-auto my-2 border-2 rounded shadow bg-blue-50 hover:shadow-md hover:shadow-blue-500"
         >
           <div className="">
-            <img src={image} alt={name} className="max-w-full h-auto" />
+            <img src={image} alt={name} className="h-auto max-w-full" />
 
-            <div className="content cursor-pointer">
-              <div className="text-sm pt-2  text-center">{name}</div>
+            <div className="cursor-pointer content">
+              <div className="pt-2 text-sm text-center">{name}</div>
 
               {(() => {
                 if (status === "Alive") {
                   return (
-                    <div className="text-sm text-green-600 pt-2  text-center">
+                    <div className="pt-2 text-sm text-center text-green-600">
                       Status : {status}
                     </div>
                   );
                 } else if (status === "Dead") {
                   return (
-                    <div className="text-sm text-red-600 pt-2 text-center">
+                    <div className="pt-2 text-sm text-center text-red-600">
                       Status : {status}
                     </div>
                   );
                 } else {
                   return (
-                    <div className="text-sm text-gray-600 pt-2 text-center">
+                    <div className="pt-2 text-sm text-center text-gray-600">
                       Status : {status}
                     </div>
                   );
@@ -45,7 +45,8 @@ const Cards = ({ results }) => {
       );
     });
   } else {
-    display = "No Characters Found";
+    if (search === "") display = "Loading";
+    else display = "No characters Found";
   }
 
   return <>{display}</>;

@@ -29,7 +29,7 @@ const Home = () => {
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
 
       <div className="grid grid-cols-1 gap-2 mx-auto md:grid-cols-2 lg:grid-cols-4 lg:max-w-6xl ">
-        <Card results={results} />
+        <Card results={results} search={search} />
       </div>
 
       <Pagination
