@@ -1,6 +1,6 @@
 # Rick-And-Morty"
 
-###### A web application to display characters of the show Rick and Morty and the episodes in which they are 
+###### A web application to display characters of the show Rick and Morty and the episodes in which they are featured
 
 ## Live Link
 [https://rick-and-morty-phi-jet.vercel.app/](https://rick-and-morty-phi-jet.vercel.app/)
